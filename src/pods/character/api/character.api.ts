@@ -1,6 +1,5 @@
 import { Character } from './character.api-model';
 import { Lookup } from 'common/models';
-import { mockCharacterCollection } from './character.mock-data';
 import axios from 'axios';
 
 export const getCharacter = async (id: string): Promise<Character> => {

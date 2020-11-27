@@ -1,9 +1,14 @@
 import * as React from 'react';
 import { AppLayout } from 'layouts';
-import { CharacterCollectionContainer } from 'pods/character-collection';
+import {
+  CharacterCollectionContainer,
+  NumberPageContextProvider,
+} from 'pods/character-collection';
 
 export const CharacterCollectionScene = () => (
   <AppLayout>
-    <CharacterCollectionContainer />
+    <NumberPageContextProvider>
+      <CharacterCollectionContainer />
+    </NumberPageContextProvider>
   </AppLayout>
 );

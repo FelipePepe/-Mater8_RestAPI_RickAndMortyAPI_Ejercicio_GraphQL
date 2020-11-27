@@ -18,8 +18,6 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   const handleLoadCharacter = async () => {
     const apiCharacter = await api.getCharacter(id);
 
-    console.log('ApiCharacter:', apiCharacter);
-
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
 
@@ -39,8 +37,6 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
       alert('Error on save character');
     }
   };
-
-  console.log('character:', character);
 
   return <CharacterComponent character={character} onSave={handleSave} />;
 };

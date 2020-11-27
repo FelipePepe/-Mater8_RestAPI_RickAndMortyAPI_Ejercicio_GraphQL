@@ -4,8 +4,11 @@ import { CharacterEntityVm } from './character-collection.vm';
 import { CharacterCard } from './components/character-card.component';
 import * as classes from './character-collection.styles';
 
+import Pagination from '@material-ui/lab/Pagination';
+
 interface Props {
   characterCollection: CharacterEntityVm[];
+  pages: number;
   onCreateCharacter: () => void;
   onEdit: (id: number) => void;
   onDelete: (id: number) => void;
@@ -14,16 +17,19 @@ interface Props {
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
-  const { characterCollection, onCreateCharacter, onEdit, onDelete } = props;
-
-  characterCollection.map((character) => console.log(character));
+  const {
+    characterCollection,
+    pages,
+    onCreateCharacter,
+    onEdit,
+    onDelete,
+  } = props;
 
   return (
     <div className={classes.root}>
       <Button variant="contained" color="primary" onClick={onCreateCharacter}>
         Add hotel
       </Button>
-
       <ul className={classes.list}>
         {characterCollection.map((character) => (
           <li key={character.id}>

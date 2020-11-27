@@ -19,8 +19,6 @@ interface Props {
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character, onSave } = props;
 
-  console.log(character);
-
   return (
     <Formik
       onSubmit={onSave}
